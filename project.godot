@@ -11,9 +11,8 @@ config_version=5
 [application]
 
 config/name="TicTacToe"
-run/main_scene="uid://c42b3nrb2a2u3"
+run/main_scene="res://TicTacToe.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
 
 [dotnet]
 

@@ -11,16 +11,19 @@ public partial class TicTacToe : Control
     private bool gameEnded = false;
     private int xWins = 0;
     private int oWins = 0;
+    private int ties = 0;
     private string[] board = new string[9];
     
     public override void _Ready()
     {
-        GD.Print("TicTacToe script started");
+        GD.Print("=== JOGO DA VELHA INICIADO ===");
         
         // Encontra os elementos da interface
         statusLabel = GetNode<Label>("VBoxContainer/Status");
         scoreLabel = GetNode<Label>("VBoxContainer/HBoxContainer/Score");
         restartButton = GetNode<Button>("VBoxContainer/HBoxContainer/RestartButton");
+        
+        GD.Print("Labels encontrados com sucesso");
         
         // Encontra os botões do tabuleiro
         var gridContainer = GetNode<GridContainer>("VBoxContainer/GridContainer");
@@ -29,41 +32,57 @@ public partial class TicTacToe : Control
         {
             buttons[i] = gridContainer.GetChild<Button>(i);
             
-            // Configura cada botão
+            // Configura o botão
+            buttons[i].SetCustomMinimumSize(new Vector2(120, 120));
             buttons[i].AddThemeFontSizeOverride("font_size", 48);
             
-            // Conecta o clique usando closure para capturar o índice
-            int index = i; // Importante: cria uma cópia local
-            buttons[i].Pressed += () => OnButtonPressed(index);
+            // Conecta o clique - MÉTODO MAIS SIMPLES
+            int index = i; // Cópia local para o closure
+            buttons[i].Pressed += () => {
+                GD.Print($">>> CLIQUE NO BOTÃO {index + 1} <<<");
+                MakeMove(index);
+            };
             
-            GD.Print($"Button {i} configured");
+            GD.Print($"Botão {i + 1} configurado");
         }
         
         // Conecta o botão de reiniciar
-        restartButton.Pressed += RestartGame;
+        restartButton.Pressed += () => {
+            GD.Print(">>> REINICIAR JOGO <<<");
+            RestartGame();
+        };
         
         // Inicia o jogo
         ResetGame();
         
-        GD.Print("TicTacToe setup complete");
+        GD.Print("=== JOGO PRONTO PARA JOGAR ===");
     }
     
-    private void OnButtonPressed(int index)
+    private void MakeMove(int index)
     {
-        GD.Print($"Button {index} pressed");
+        GD.Print($"MakeMove chamado para posição {index}");
         
-        if (gameEnded || !string.IsNullOrEmpty(board[index]))
+        // Verifica se o movimento é válido
+        if (gameEnded)
         {
-            GD.Print("Invalid move");
+            GD.Print("Jogo já terminou!");
             return;
         }
         
-        // Marca o botão
-        string symbol = isPlayerX ? "X" : "O";
-        board[index] = symbol;
-        buttons[index].Text = symbol;
+        if (!string.IsNullOrEmpty(board[index]))
+        {
+            GD.Print($"Posição {index} já ocupada com: {board[index]}");
+            return;
+        }
         
-        // Muda a cor
+        // Faz a jogada
+        string currentPlayer = isPlayerX ? "X" : "O";
+        board[index] = currentPlayer;
+        
+        // Atualiza o botão IMEDIATAMENTE
+        buttons[index].Text = currentPlayer;
+        
+        // Define a cor
         if (isPlayerX)
         {
             buttons[index].AddThemeColorOverride("font_color", Colors.Red);
@@ -73,13 +92,14 @@ public partial class TicTacToe : Control
             buttons[index].AddThemeColorOverride("font_color", Colors.Blue);
         }
         
-        GD.Print($"Set button {index} to {symbol}");
+        GD.Print($"Posição {index} marcada com '{currentPlayer}'");
+        GD.Print($"Texto do botão agora é: '{buttons[index].Text}'");
         
         // Verifica vitória
         if (CheckWin())
         {
             gameEnded = true;
-            statusLabel.Text = $"Jogador {symbol} venceu!";
+            statusLabel.Text = $"� JOGADOR {currentPlayer} VENCEU! �";
             
             if (isPlayerX)
                 xWins++;
@@ -87,51 +107,54 @@ public partial class TicTacToe : Control
                 oWins++;
                 
             UpdateScore();
-            GD.Print($"{symbol} won!");
+            GD.Print($"� VITÓRIA DO JOGADOR {currentPlayer}! 🎉");
         }
         else if (CheckTie())
         {
             gameEnded = true;
-            statusLabel.Text = "Empate!";
-            GD.Print("Game tied!");
+            statusLabel.Text = "🤝 EMPATE! 🤝";
+            ties++;
+            UpdateScore();
+            GD.Print("⚖️ JOGO EMPATADO!");
         }
         else
         {
-            // Troca o jogador
+            // Alterna o jogador
             isPlayerX = !isPlayerX;
-            statusLabel.Text = $"Vez do {(isPlayerX ? "X" : "O")}";
-            GD.Print($"Turn changed to {(isPlayerX ? "X" : "O")}");
+            string nextPlayer = isPlayerX ? "X" : "O";
+            statusLabel.Text = $"Vez do Jogador {nextPlayer}";
+            GD.Print($"🔄 Agora é a vez do Jogador {nextPlayer}");
         }
     }
     
     private bool CheckWin()
     {
-        // Linhas
-        for (int i = 0; i < 3; i++)
-        {
-            if (CheckLine(i * 3, i * 3 + 1, i * 3 + 2))
-                return true;
-        }
+        // Combinações vencedoras
+        int[][] winPatterns = {
+            new int[] {0, 1, 2}, new int[] {3, 4, 5}, new int[] {6, 7, 8}, // Linhas
+            new int[] {0, 3, 6}, new int[] {1, 4, 7}, new int[] {2, 5, 8}, // Colunas  
+            new int[] {0, 4, 8}, new int[] {2, 4, 6}  // Diagonais
+        };
         
-        // Colunas
-        for (int i = 0; i < 3; i++)
+        foreach (var pattern in winPatterns)
         {
-            if (CheckLine(i, i + 3, i + 6))
+            int a = pattern[0];
+            int b = pattern[1]; 
+            int c = pattern[2];
+            
+            if (!string.IsNullOrEmpty(board[a]) && 
+                board[a] == board[b] && 
+                board[b] == board[c])
+            {
+                // Destaca os botões vencedores
+                buttons[a].Modulate = Colors.Gold;
+                buttons[b].Modulate = Colors.Gold;
+                buttons[c].Modulate = Colors.Gold;
                 return true;
+            }
         }
-        
-        // Diagonais
-        if (CheckLine(0, 4, 8) || CheckLine(2, 4, 6))
-            return true;
         
         return false;
-    }
-    
-    private bool CheckLine(int a, int b, int c)
-    {
-        return !string.IsNullOrEmpty(board[a]) && 
-               board[a] == board[b] && 
-               board[b] == board[c];
     }
     
     private bool CheckTie()
@@ -146,8 +169,8 @@ public partial class TicTacToe : Control
     
     private void RestartGame()
     {
+        GD.Print("🔄 REINICIANDO JOGO...");
         ResetGame();
-        GD.Print("Game restarted");
     }
     
     private void ResetGame()
@@ -158,18 +181,20 @@ public partial class TicTacToe : Control
             board[i] = "";
             buttons[i].Text = " ";
             buttons[i].AddThemeColorOverride("font_color", Colors.Black);
+            buttons[i].Modulate = Colors.White;
         }
         
         // Reseta o estado
         isPlayerX = true;
         gameEnded = false;
-        statusLabel.Text = "Vez do X";
+        statusLabel.Text = "Vez do Jogador X";
         
-        GD.Print("Game reset");
+        GD.Print("✅ Jogo resetado - Jogador X começa");
     }
     
     private void UpdateScore()
     {
-        scoreLabel.Text = $"X: {xWins} | O: {oWins}";
+        scoreLabel.Text = $"X: {xWins} | O: {oWins} | Empates: {ties}";
+        GD.Print($"📊 Placar: X={xWins}, O={oWins}, Empates={ties}");
     }
 }
