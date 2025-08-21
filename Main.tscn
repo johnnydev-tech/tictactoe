@@ -1,0 +1,166 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv6igtkout6dx"]
+
+[ext_resource type="Script" uid="uid://d342on1a2w7gq" path="res://GameManager.cs" id="1_0h1vo"]
+[ext_resource type="Script" uid="uid://d1cipgld55np1" path="res://Cell.cs" id="2_8hjxk"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0h1vo")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.15, 0.25, 1)
+
+[node name="MainContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftPanel" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Title" type="Label" parent="MainContainer/LeftPanel"]
+layout_mode = 2
+text = "JOGO DA VELHA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MainContainer/LeftPanel"]
+layout_mode = 2
+
+[node name="GameInfo" type="VBoxContainer" parent="MainContainer/LeftPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StatusLabel" type="Label" parent="MainContainer/LeftPanel/GameInfo"]
+layout_mode = 2
+text = "Vez do Jogador X"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="MainContainer/LeftPanel/GameInfo"]
+layout_mode = 2
+text = "X: 0 | O: 0"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="MainContainer/LeftPanel"]
+layout_mode = 2
+
+[node name="Instructions" type="VBoxContainer" parent="MainContainer/LeftPanel"]
+layout_mode = 2
+
+[node name="InstructionsTitle" type="Label" parent="MainContainer/LeftPanel/Instructions"]
+layout_mode = 2
+text = "CONTROLES:"
+
+[node name="InstructionsList" type="VBoxContainer" parent="MainContainer/LeftPanel/Instructions"]
+layout_mode = 2
+
+[node name="Instruction1" type="Label" parent="MainContainer/LeftPanel/Instructions/InstructionsList"]
+layout_mode = 2
+text = "• Clique do mouse para selecionar"
+autowrap_mode = 2
+
+[node name="Instruction2" type="Label" parent="MainContainer/LeftPanel/Instructions/InstructionsList"]
+layout_mode = 2
+text = "• Enter para confirmar célula focada"
+autowrap_mode = 2
+
+[node name="Instruction3" type="Label" parent="MainContainer/LeftPanel/Instructions/InstructionsList"]
+layout_mode = 2
+text = "• R para reiniciar jogo"
+autowrap_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="MainContainer/LeftPanel"]
+layout_mode = 2
+
+[node name="RestartButton" type="Button" parent="MainContainer/LeftPanel"]
+layout_mode = 2
+text = "Reiniciar Jogo (R)"
+
+[node name="RightPanel" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="BoardContainer" type="CenterContainer" parent="MainContainer/RightPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GameBoard" type="GridContainer" parent="MainContainer/RightPanel/BoardContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 3
+
+[node name="Cell0" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_8hjxk")
+
+[node name="Cell1" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_8hjxk")
+
+[node name="Cell2" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_8hjxk")
+
+[node name="Cell3" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_8hjxk")
+
+[node name="Cell4" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_8hjxk")
+
+[node name="Cell5" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_8hjxk")
+
+[node name="Cell6" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_8hjxk")
+
+[node name="Cell7" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_8hjxk")
+
+[node name="Cell8" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_8hjxk")
