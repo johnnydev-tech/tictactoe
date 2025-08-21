@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cv6igtkout6dx"]
+[gd_scene load_steps=3 format=3 uid="uid://c42b3nrb2a2u3"]
 
-[ext_resource type="Script" uid="uid://d342on1a2w7gq" path="res://GameManager.cs" id="1_0h1vo"]
-[ext_resource type="Script" uid="uid://d1cipgld55np1" path="res://Cell.cs" id="2_8hjxk"]
+[ext_resource type="Script" path="res://GameManager.cs" id="1_0h1vo"]
+[ext_resource type="Script" path="res://Cell.cs" id="2_8hjxk"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -36,7 +36,7 @@ grow_vertical = 2
 [node name="LeftPanel" type="VBoxContainer" parent="MainContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.5
+size_flags_stretch_ratio = 0.35
 
 [node name="Title" type="Label" parent="MainContainer/LeftPanel"]
 layout_mode = 2
@@ -99,7 +99,7 @@ text = "Reiniciar Jogo (R)"
 [node name="RightPanel" type="VBoxContainer" parent="MainContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.5
+size_flags_stretch_ratio = 0.65
 
 [node name="BoardContainer" type="CenterContainer" parent="MainContainer/RightPanel"]
 layout_mode = 2
@@ -112,54 +112,63 @@ size_flags_vertical = 4
 columns = 3
 
 [node name="Cell0" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_8hjxk")
 
 [node name="Cell1" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_8hjxk")
 
 [node name="Cell2" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_8hjxk")
 
 [node name="Cell3" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_8hjxk")
 
 [node name="Cell4" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_8hjxk")
 
 [node name="Cell5" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_8hjxk")
 
 [node name="Cell6" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_8hjxk")
 
 [node name="Cell7" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_8hjxk")
 
 [node name="Cell8" type="Button" parent="MainContainer/RightPanel/BoardContainer/GameBoard"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

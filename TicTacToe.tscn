@@ -1,0 +1,105 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2fh8qgw6kxj5"]
+
+[ext_resource type="Script" path="res://TicTacToe.cs" id="1_0h1vo"]
+
+[sub_resource type="Theme" id="Theme_1"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_0h1vo")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.2, 0.2, 0.3, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -250.0
+offset_right = 200.0
+offset_bottom = 250.0
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_1")
+text = "JOGO DA VELHA"
+horizontal_alignment = 1
+
+[node name="Status" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Vez do X"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="Button1" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+text = " "
+
+[node name="Button2" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+text = " "
+
+[node name="Button3" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+text = " "
+
+[node name="Button4" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+text = " "
+
+[node name="Button5" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+text = " "
+
+[node name="Button6" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+text = " "
+
+[node name="Button7" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+text = " "
+
+[node name="Button8" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+text = " "
+
+[node name="Button9" type="Button" parent="VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+text = " "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Score" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "X: 0 | O: 0"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Reiniciar"
