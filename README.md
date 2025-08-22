@@ -1,134 +1,64 @@
-# 🎮 Jogo da Velha - Design Minimalista
+# 🎮 Jogo da Velha (Tic-Tac-Toe)
 
-## 🎨 **Layout Responsivo e Clean**
+Um jogo da velha moderno e responsivo desenvolvido em Godot Engine com C#.
 
-### � **Painel Esquerdo (35% da tela) - Minimalista:**
-- **Título**: "Jogo da Velha" (clean, sem excesso)
-- **Status**: Indicador simples de vez do jogador
-- **Placar**: Formato limpo `X: 0  |  O: 0`
-- **Controles**: Apenas 2 botões essenciais
-  - `Reiniciar` - Nova partida
-  - `Zerar Placar` - Reset das pontuações
+## 🎯 Sobre o Jogo
 
-### 🎯 **Painel Direito (65% da tela) - Foco no Jogo:**
-- **Tabuleiro 3x3** centralizado e maior
-- **Botões responsivos** com bom tamanho
-- **Visual limpo** sem distrações
+Jogo da velha clássico com interface moderna, sistema de pontuação e reinício automático. Dois jogadores se alternam colocando X e O em uma grade 3x3, tentando conseguir três símbolos em linha.
 
-## ✨ **Características do Design:**
+## ✨ Características
 
-### 🔸 **Minimalista:**
-- ❌ Removidos emojis excessivos
-- ❌ Removidas instruções desnecessárias
-- ❌ Removidos separadores visuais
-- ✅ Apenas elementos essenciais
-- ✅ Espaçamento inteligente com spacers
-- ✅ Foco na experiência de jogo
+- **Interface Moderna**: Design 3D com cores dinâmicas para cada jogador
+- **Sistema de Pontuação**: Contador de vitórias e empates
+- **Reinício Automático**: O jogo reinicia automaticamente após 3 segundos
+- **Visual Responsivo**: Layout adaptativo com espaçamento adequado
+- **Controles Intuitivos**: Botões para reiniciar partida e zerar placar
 
-### 🔸 **Responsivo:**
-- **35% / 65%** - Proporção otimizada
-- **Spacers** para distribuição automática
-- **Tamanho adaptável** conforme a tela
+## 🎮 Como Jogar
 
-### 🔸 **Usual e Familiar:**
-- Interface similar a apps modernos
-- Controles intuitivos e diretos
-- Visual clean sem poluição
+1. **Objetivo**: Consiga três símbolos iguais em linha (horizontal, vertical ou diagonal)
+2. **Jogador X**: Começa sempre primeiro (cor vermelha)
+3. **Jogador O**: Joga em seguida (cor azul claro)
+4. **Vitória**: Os símbolos vencedores ficam dourados
+5. **Reinício**: Aguarde 3 segundos para uma nova partida automática
 
-## � **Experiência de Uso:**
+## 🎨 Capturas do Jogo
+
+*Imagens e vídeos serão adicionados em `/assets/`*
+
+## 🛠️ Tecnologias
+
+- **Engine**: Godot 4.4.1
+- **Linguagem**: C# (.NET 8.0)
+- **Plataforma**: Desktop (Windows, macOS, Linux)
+
+## 📁 Estrutura do Projeto
 
 ```
-┌─────────────┬─────────────────────────┐
-│  CONTROLES  │       TABULEIRO         │
-│   (35%)     │        (65%)            │
-├─────────────┼─────────────────────────┤
-│             │                         │
-│ Jogo da     │                         │
-│ Velha       │       [ ][ ][ ]         │
-│             │       [ ][ ][ ]         │
-│ Vez do X    │       [ ][ ][ ]         │
-│             │                         │
-│ X: 0 | O: 0 │    (Tabuleiro maior     │
-│             │     e centralizado)     │
-│ [Reiniciar] │                         │
-│             │                         │
-│[Zerar Placar]│                        │
-│             │                         │
-└─────────────┴─────────────────────────┘
+tictactoe/
+├── README.md           # Este arquivo
+├── TicTacToe.cs       # Lógica principal do jogo
+├── TicTacToe.tscn     # Cena principal
+├── project.godot      # Configuração do projeto
+├── icon.svg          # Ícone do projeto
+├── docs/             # Documentação técnica
+└── assets/           # Imagens e vídeos (em breve)
 ```
 
-## 🚀 **Melhorias Implementadas:**
+## 🚀 Como Executar
 
-✅ **Interface mais limpa e profissional**
-✅ **Foco no que importa: jogar**
-✅ **Proporções ideais (35/65)**
-✅ **Spacers para layout flexível**
-✅ **Apenas 2 botões essenciais**
-✅ **Placar adaptativo (mostra empates só quando há)**
-✅ **Visual moderno e minimalista**
+1. Abra o Godot Engine 4.4.1+
+2. Importe o projeto selecionando `project.godot`
+3. Pressione F5 ou clique em "Jogar"
+4. Divirta-se!
 
-Agora o jogo tem uma interface clean, usual e focada na experiência! �
+## 🏆 Funcionalidades Especiais
 
-Um jogo da velha simples criado em Godot 4 usando C#.
+- **Destaque de Vitória**: Linha vencedora fica dourada
+- **Cores Dinâmicas**: Status muda de cor conforme o jogador ativo
+- **Auto-restart**: Não precisa clicar para jogar novamente
+- **Interface Profissional**: Botões 3D com efeitos hover e pressed
 
-## Características
+---
 
-- Interface responsiva que se adapta ao tamanho da tela
-- Tabuleiro fixo do lado direito
-- Controles simplificados via mouse e teclado
-- Sistema de pontuação que mantém o score de vitórias
-- Destaque visual das células vencedoras
-- Navegação com Tab e seleção com Enter
-- Cores diferentes para X (vermelho) e O (azul)
-
-## Controles
-
-### Mouse:
-- **Clique**: Selecionar célula diretamente
-
-### Teclado:
-- **Tab**: Navegar entre as células
-- **Enter**: Confirmar seleção da célula focada
-- **R**: Reiniciar o jogo
-
-## Layout da Tela
-
-- **Painel Esquerdo (50%)**: 
-  - Status do jogo (vez do jogador, placar)
-  - Instruções de controle
-  - Botão de reiniciar
-- **Painel Direito (50%)**: 
-  - Tabuleiro responsivo e ajustável
-  - Se adapta automaticamente ao tamanho da tela
-
-## Como Jogar
-
-1. O jogo começa com o jogador X
-2. Clique em uma célula ou use Tab + Enter para fazer sua jogada
-3. Os jogadores se alternam automaticamente entre X e O
-4. O primeiro jogador a conseguir três símbolos em linha vence
-5. Se todas as células forem preenchidas sem vencedor, é empate
-6. Use a tecla R ou o botão para reiniciar
-7. O placar é mantido entre as partidas
-
-## Responsividade
-
-O tabuleiro se ajusta automaticamente ao tamanho da janela, mantendo sempre a proporção quadrada e ocupando o máximo de espaço disponível no painel direito.
-
-## Estrutura do Projeto
-
-- `Main.tscn`: Cena principal com a interface do jogo
-- `GameManager.cs`: Script principal que gerencia a lógica do jogo
-- `Cell.cs`: Script para cada célula do tabuleiro
-- `project.godot`: Configurações do projeto Godot
-
-## Requisitos
-
-- Godot 4.4 ou superior
-- Suporte a C# configurado no Godot
-
-## Como Executar
-
-1. Abra o projeto no Godot
-2. Certifique-se de que o suporte a C# está habilitado
-3. Execute o projeto (F5) ou clique no botão Play
+*Desenvolvido em Godot Engine para trabalho acadêmico*
