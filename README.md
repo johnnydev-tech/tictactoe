@@ -24,7 +24,32 @@ Jogo da velha clássico com interface moderna, sistema de pontuação e reiníci
 
 ## 🎨 Capturas do Jogo
 
-*Imagens e vídeos serão adicionados em `/assets/`*
+### 📸 Screenshots
+
+<div align="center">
+  <img src="assets/game1.png" alt="Tela de jogo - Estado inicial" width="400"/>
+  <br>
+  <em>Tela de jogo - Estado inicial</em>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="assets/game2.png" alt="Tela de jogo - Partida em andamento" width="400"/>
+  <br>
+  <em>Tela de jogo - Partida em andamento</em>
+</div>
+
+### 🎥 Demonstração em Vídeo
+
+<div align="center">
+  <video width="400" controls>
+    <source src="assets/video.mov" type="video/quicktime">
+    Seu navegador não suporta o elemento de vídeo.
+  </video>
+  <br>
+  <em>Demonstração completa do jogo</em>
+</div>
 
 ## 🛠️ Tecnologias
 
@@ -42,7 +67,10 @@ tictactoe/
 ├── project.godot      # Configuração do projeto
 ├── icon.svg          # Ícone do projeto
 ├── docs/             # Documentação técnica
-└── assets/           # Imagens e vídeos (em breve)
+└── assets/           # Screenshots e vídeo do jogo
+    ├── game1.png     # Screenshot - Estado inicial
+    ├── game2.png     # Screenshot - Partida em andamento
+    └── video.mov     # Demonstração em vídeo
 ```
 
 ## 🚀 Como Executar
