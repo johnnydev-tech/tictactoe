@@ -1,26 +1,6 @@
 # 🎮 Jogo da Velha (Tic-Tac-Toe)
 
-Um jogo da velha moderno e responsivo desenvolvido em Godot Engine com C#.
-
-## 🎯 Sobre o Jogo
-
-Jogo da velha clássico com interface moderna, sistema de pontuação e reinício automático. Dois jogadores se alternam colocando X e O em uma grade 3x3, tentando conseguir três símbolos em linha.
-
-## ✨ Características
-
-- **Interface Moderna**: Design 3D com cores dinâmicas para cada jogador
-- **Sistema de Pontuação**: Contador de vitórias e empates
-- **Reinício Automático**: O jogo reinicia automaticamente após 3 segundos
-- **Visual Responsivo**: Layout adaptativo com espaçamento adequado
-- **Controles Intuitivos**: Botões para reiniciar partida e zerar placar
-
-## 🎮 Como Jogar
-
-1. **Objetivo**: Consiga três símbolos iguais em linha (horizontal, vertical ou diagonal)
-2. **Jogador X**: Começa sempre primeiro (cor vermelha)
-3. **Jogador O**: Joga em seguida (cor azul claro)
-4. **Vitória**: Os símbolos vencedores ficam dourados
-5. **Reinício**: Aguarde 3 segundos para uma nova partida automática
+Um jogo da velha moderno e responsivo desenvolvido in Godot Engine com C#.
 
 ## 🎨 Capturas do Jogo
 
@@ -44,12 +24,32 @@ Jogo da velha clássico com interface moderna, sistema de pontuação e reiníci
 
 <div align="center">
   <video width="400" controls>
-    <source src="assets/video.mov" type="video/quicktime">
+    <source src="assets/video.mp4" type="video/mp4">
     Seu navegador não suporta o elemento de vídeo.
   </video>
   <br>
   <em>Demonstração completa do jogo</em>
 </div>
+
+## 🎯 Sobre o Jogo
+
+Jogo da velha clássico com interface moderna, sistema de pontuação e reinício automático. Dois jogadores se alternam colocando X e O em uma grade 3x3, tentando conseguir três símbolos em linha.
+
+## ✨ Características
+
+- **Interface Moderna**: Design 3D com cores dinâmicas para cada jogador
+- **Sistema de Pontuação**: Contador de vitórias e empates
+- **Reinício Automático**: O jogo reinicia automaticamente após 3 segundos
+- **Visual Responsivo**: Layout adaptativo com espaçamento adequado
+- **Controles Intuitivos**: Botões para reiniciar partida e zerar placar
+
+## 🎮 Como Jogar
+
+1. **Objetivo**: Consiga três símbolos iguais em linha (horizontal, vertical ou diagonal)
+2. **Jogador X**: Começa sempre primeiro (cor vermelha)
+3. **Jogador O**: Joga em seguida (cor azul claro)
+4. **Vitória**: Os símbolos vencedores ficam dourados
+5. **Reinício**: Aguarde 3 segundos para uma nova partida automática
 
 ## 🛠️ Tecnologias
 
@@ -70,7 +70,7 @@ tictactoe/
 └── assets/           # Screenshots e vídeo do jogo
     ├── game1.png     # Screenshot - Estado inicial
     ├── game2.png     # Screenshot - Partida em andamento
-    └── video.mov     # Demonstração em vídeo
+    └── video.mp4     # Demonstração em vídeo
 ```
 
 ## 🚀 Como Executar
