@@ -20,13 +20,10 @@ Um jogo da velha moderno e responsivo desenvolvido in Godot Engine com C#.
   <em>Tela de jogo - Partida em andamento</em>
 </div>
 
-### 🎥 Demonstração em Vídeo
+### 🎥 Demonstração em GIF
 
 <div align="center">
-  <video width="400" controls>
-    <source src="assets/video.mp4" type="video/mp4">
-    Seu navegador não suporta o elemento de vídeo.
-  </video>
+  <img src="assets/video.gif" alt="Demonstração completa do jogo" width="400"/>
   <br>
   <em>Demonstração completa do jogo</em>
 </div>
@@ -67,10 +64,10 @@ tictactoe/
 ├── project.godot      # Configuração do projeto
 ├── icon.svg          # Ícone do projeto
 ├── docs/             # Documentação técnica
-└── assets/           # Screenshots e vídeo do jogo
+└── assets/           # Screenshots e GIF do jogo
     ├── game1.png     # Screenshot - Estado inicial
     ├── game2.png     # Screenshot - Partida em andamento
-    └── video.mp4     # Demonstração em vídeo
+    └── video.gif     # Demonstração em GIF
 ```
 
 ## 🚀 Como Executar
