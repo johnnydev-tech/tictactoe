@@ -1,4 +1,73 @@
-# Jogo da Velha - Godot C#
+# 🎮 Jogo da Velha - Design Minimalista
+
+## 🎨 **Layout Responsivo e Clean**
+
+### � **Painel Esquerdo (35% da tela) - Minimalista:**
+- **Título**: "Jogo da Velha" (clean, sem excesso)
+- **Status**: Indicador simples de vez do jogador
+- **Placar**: Formato limpo `X: 0  |  O: 0`
+- **Controles**: Apenas 2 botões essenciais
+  - `Reiniciar` - Nova partida
+  - `Zerar Placar` - Reset das pontuações
+
+### 🎯 **Painel Direito (65% da tela) - Foco no Jogo:**
+- **Tabuleiro 3x3** centralizado e maior
+- **Botões responsivos** com bom tamanho
+- **Visual limpo** sem distrações
+
+## ✨ **Características do Design:**
+
+### 🔸 **Minimalista:**
+- ❌ Removidos emojis excessivos
+- ❌ Removidas instruções desnecessárias
+- ❌ Removidos separadores visuais
+- ✅ Apenas elementos essenciais
+- ✅ Espaçamento inteligente com spacers
+- ✅ Foco na experiência de jogo
+
+### 🔸 **Responsivo:**
+- **35% / 65%** - Proporção otimizada
+- **Spacers** para distribuição automática
+- **Tamanho adaptável** conforme a tela
+
+### 🔸 **Usual e Familiar:**
+- Interface similar a apps modernos
+- Controles intuitivos e diretos
+- Visual clean sem poluição
+
+## � **Experiência de Uso:**
+
+```
+┌─────────────┬─────────────────────────┐
+│  CONTROLES  │       TABULEIRO         │
+│   (35%)     │        (65%)            │
+├─────────────┼─────────────────────────┤
+│             │                         │
+│ Jogo da     │                         │
+│ Velha       │       [ ][ ][ ]         │
+│             │       [ ][ ][ ]         │
+│ Vez do X    │       [ ][ ][ ]         │
+│             │                         │
+│ X: 0 | O: 0 │    (Tabuleiro maior     │
+│             │     e centralizado)     │
+│ [Reiniciar] │                         │
+│             │                         │
+│[Zerar Placar]│                        │
+│             │                         │
+└─────────────┴─────────────────────────┘
+```
+
+## 🚀 **Melhorias Implementadas:**
+
+✅ **Interface mais limpa e profissional**
+✅ **Foco no que importa: jogar**
+✅ **Proporções ideais (35/65)**
+✅ **Spacers para layout flexível**
+✅ **Apenas 2 botões essenciais**
+✅ **Placar adaptativo (mostra empates só quando há)**
+✅ **Visual moderno e minimalista**
+
+Agora o jogo tem uma interface clean, usual e focada na experiência! �
 
 Um jogo da velha simples criado em Godot 4 usando C#.
 
